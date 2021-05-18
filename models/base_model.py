@@ -24,7 +24,8 @@ class BaseModel:
         """
         String representation of the instance created
         """
-        return "[{}] ({}) {}".format(type(self), self.id, self.__dict__)
+        return "[{}] ({}) {}".format(type(self).__name__, self.id,
+                                     self.__dict__)
 
     def save(self):
         """
@@ -37,13 +38,8 @@ class BaseModel:
         Returns dictionary containing all keys and values of instance
         Filters data that starts with underscores, methods, and functions.
         """
-        my_dict = {}
-        my_dict['__class__'] = type(self)
-        self.created_at.isoformat()
-        self.updated_at.isoformat()
-        for i in inspect.getmembers(self):
-            if not i[0].startswith("_"):
-                if not inspect.ismethod(i[1]) and not\
-                       inspect.isfunction(i[1]):
-                    my_dict[i[0]] = i[1]
+        my_dict = self.__dict__.copy()
+        my_dict['__class__'] = type(self).__name__
+        my_dict['created_at'] = self.created_at.isoformat()
+        my_dict['updated_at'] = self.updated_at.isoformat()
         return my_dict
