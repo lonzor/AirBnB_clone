@@ -20,7 +20,7 @@ class TestBaseModel(unittest.TestCase):
     def test_to_dict(self):
         model = BaseModel()
         dict1 = model.to_dict()
-        self.assertIsInstance(dict1, dict)
+        self.assertIn("__class__", dict1.keys())
 
     def test_self_id(self):
         model = BaseModel()
