@@ -12,13 +12,22 @@ class BaseModel:
     Class that is the base of other models
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         Constructor of class BaseModel instance
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now(tz=None)
-        self.updated_at = self.created_at
+        if kwargs is not None and len(kwargs) != 0:
+            for i in kwargs:
+                if i == "__class__":
+                    continue
+                if i == "created_at" or i == "updated_at":
+                    kwargs[i] = datetime.strptime(kwargs[i],
+                                                  "%Y-%m-%dT%H:%M:%S.%f")
+                setattr(self, i, kwargs[i])
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now(tz=None)
+            self.updated_at = self.created_at
 
     def __str__(self):
         """
