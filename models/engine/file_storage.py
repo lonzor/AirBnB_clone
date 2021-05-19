@@ -26,7 +26,6 @@ class FileStorage:
         """
         Sets in __objects the OBJ with key <obj class name>.id
         """
-        new_obj = obj.to_dict()
         new_key = type(obj).__name__
         new_key += "." + obj.id
         FileStorage.__objects[new_key] = obj
