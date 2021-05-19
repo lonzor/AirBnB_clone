@@ -11,21 +11,14 @@ from models.engine.file_storage import FileStorage
 class TestFileStorage(unittest.TestCase):
     """
     Tests for FileStorage class
+    """
 
     def test_others(self):
         file_path = FileStorage._FileStorage__file_path
         if not os.path.exists(file_path):
             model = BaseModel()
         self.assertTrue(os.path.exists(file_path))
-    """
 
     def test_obj_dict(self):
         model = BaseModel()
         self.assertIsInstance(FileStorage._FileStorage__objects, dict)
-
-    def test_self_save(self):
-        if os.path.exists(FileStorage._FileStorage__file_path):
-            os.remove(FileStorage._FileStorage__file_path)
-        fs = FileStorage()
-        fs.save()
-        self.assertTrue(os.path.exists(FileStorage._FileStorage__file_path))
