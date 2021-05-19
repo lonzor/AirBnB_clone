@@ -20,6 +20,17 @@ class TestFileStorage(unittest.TestCase):
             model = BaseModel()
         self.assertTrue(os.path.exists(file_path))
 
+
     def test_obj_dict(self):
         model = BaseModel()
         self.assertIsInstance(FileStorage._FileStorage__objects, dict)
+
+    def test_save(self):
+        file_path = "file.json"
+        fs = FileStorage()
+        try:
+            os.remove(file_path)
+        except:
+            pass
+        fs.save()
+        self.assertTrue(os.path.exists(file_path))
