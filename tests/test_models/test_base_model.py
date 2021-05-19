@@ -14,6 +14,7 @@ class TestBaseModel(unittest.TestCase):
         model = BaseModel()
         time1 = model.updated_at
         model.save()
+        self.assertTrue(os.path.exists("file.json"))
         time2 = model.updated_at
         self.assertNotEqual(time1, time2)
 
