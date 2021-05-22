@@ -9,7 +9,6 @@ from models.engine.file_storage import FileStorage
 import cmd
 import sys
 import models
-import json
 
 
 class HBNBCommand(cmd.Cmd):

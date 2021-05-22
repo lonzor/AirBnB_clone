@@ -1,9 +1,10 @@
-#!/usr/bin/pyton3
+#!/usr/bin/python3
 """
 This module contains the User class
 """
 from datetime import datetime
 from models.base_model import BaseModel
+
 
 class User(BaseModel):
     """Class for User"""

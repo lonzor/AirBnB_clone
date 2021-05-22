@@ -14,7 +14,7 @@ class FileStorage:
     Deserializes JSON file to instances
     """
 
-    obj_dict = {"BaseModel": BaseModel(), "User": User()}
+    cls_dict = {"BaseModel": BaseModel, "User": User}
     __file_path = 'file.json'
     __objects = {}
 
@@ -50,7 +50,10 @@ class FileStorage:
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, mode='r', encoding='utf-8') as f:
                 temp_objs = json.load(f)
+            print("here")
             for k, v in temp_objs.items():
                 new_list = k.split(".")
-                new_obj = self.obj_dict[new_list[0]]
+                print(new_list)
+                new_obj = self.cls_dict[new_list[0]]
+                print(new_obj)
                 FileStorage.__objects[k] = new_obj(**v)
