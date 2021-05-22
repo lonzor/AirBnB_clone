@@ -13,10 +13,7 @@ import sys
 class HBNBCommand(cmd.Cmd):
     """This class contains the console for HBnB project"""
 
-    def __init__(self):
-        """Constructor for console"""
-        cmd.Cmd.__init__(self)
-        self.prompt = '(hbnb)'
+    prompt = '(hbnb)'
 
     def do_show(self, arg):
         """Prints str representation of an instance"""
@@ -74,5 +71,3 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         pass
 
-if __name__ == '__main__':
-    HBNBCommand().cmdloop()
