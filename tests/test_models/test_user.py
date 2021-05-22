@@ -27,3 +27,6 @@ class TestUser(unittest.TestCase):
         u.last_name = "Holberton"
         self.assertTrue(hasattr(u, "last_name"))
         self.assertIsInstance(u.last_name, str)
+
+if __name__ == '__main__':
+        unittest.main()
