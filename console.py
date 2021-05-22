@@ -44,10 +44,13 @@ class HBNBCommand(cmd.Cmd):
         signal = 0
         if len(arg) == 0:
             print("** class name missing **")
+            return
         elif arg_list[0] not in self.obj_dict.keys():
             print("** class doesn't exist **")
+            return
         elif len(arg_list) < 2:
             print("** instance id missing **")
+            return
         else:
             new_str = str(arg_list[0] + '.' + arg_list[1])
             for k in my_dict.keys():
@@ -56,10 +59,13 @@ class HBNBCommand(cmd.Cmd):
                     break
             if signal == 0:
                 print("** no instance found **")
+                return
         if len(arg_list) < 3:
             print("** attribute name missing **")
+            return
         elif len(arg_list) < 4:
             print("** value missing **")
+            return
         else:
             new_dict = my_dict[new_str]
             try:
