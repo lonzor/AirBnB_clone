@@ -4,6 +4,7 @@ This module contains the console (command interpreter) for
 the Holberton School AirBnB project
 """
 from models.base_model import BaseModel
+from models.user import User
 from models.engine.file_storage import FileStorage
 import cmd
 import sys
