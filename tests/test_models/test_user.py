@@ -7,24 +7,25 @@ import os
 from models.user import User
 
 
+u = User()
+
+
 class TestUser(unittest.TestCase):
     """Unittests for User class"""
 
-    def test_user(self):
-        file_path = "file.json"
-        if os.path.exists(file_path):
-            os.remove(file_path)
-        u = User()
-        u.email = "hello@goodbye.com"
+    def test_email(self):
         self.assertTrue(hasattr(u, "email"))
         self.assertIsInstance(u.email, str)
-        u.password = "password"
+        
+    def test_password(self):
         self.assertTrue(hasattr(u, "password"))
         self.assertIsInstance(u.password, str)
-        u.first_name = "Betty"
+        
+    def test_first_name(self):
         self.assertTrue(hasattr(u, "first_name"))
         self.assertIsInstance(u.first_name, str)
-        u.last_name = "Holberton"
+        
+    def test_last_name(self):
         self.assertTrue(hasattr(u, "last_name"))
         self.assertIsInstance(u.last_name, str)
 
