@@ -17,6 +17,7 @@ class TestFileStorage(unittest.TestCase):
         file_path = FileStorage._FileStorage__file_path
         if not os.path.exists(file_path):
             model = BaseModel()
+            model.save()
         self.assertTrue(os.path.exists(file_path))
 
     def test_obj_dict(self):
