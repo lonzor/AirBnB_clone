@@ -3,6 +3,7 @@
 Module for class FileStorage
 """
 from models.base_model import BaseModel
+from models.user import User
 import json
 import os
 
@@ -13,6 +14,7 @@ class FileStorage:
     Deserializes JSON file to instances
     """
 
+    obj_dict = {"BaseModel": BaseModel(), "User": User()}
     __file_path = 'file.json'
     __objects = {}
 
@@ -49,4 +51,6 @@ class FileStorage:
             with open(FileStorage.__file_path, mode='r', encoding='utf-8') as f:
                 temp_objs = json.load(f)
             for k, v in temp_objs.items():
-                FileStorage.__objects[k] = BaseModel(**v)
+                new_list = k.split(".")
+                new_obj = self.obj_dict[new_list[0]]
+                FileStorage.__objects[k] = new_obj(**v)

@@ -14,7 +14,7 @@ import json
 class HBNBCommand(cmd.Cmd):
     """This class contains the console for HBnB project"""
 
-    obj_dict = {"BaseModel": BaseModel()}
+    obj_dict = {"BaseModel": BaseModel(), "User": User()}
     prompt = '(hbnb)'
 
     def do_all(self, arg):
