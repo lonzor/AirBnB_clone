@@ -11,8 +11,8 @@ class test_amenity(unittest.TestCase):
     """Holds tests for class State"""
 
     def test_name(self):
-        self.assertTrue(hasattr(a, "test_name"))
-        self.assertIsInstance(a.test_name, str)
+        self.assertTrue(hasattr(a, "name"))
+        self.assertIsInstance(a.name, str)
 
 if __name__ == '__main__':
         unittest.main()
