@@ -86,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
                     setattr(new_dict, arg_list[2], arg_list[3][1:-1])
             except:
                 setattr(new_dict, arg_list[2], arg_list[3][1:-1])
-        self.obj_dict[arg_list[0]].save()
+        models.storage.save()
 
     def do_show(self, arg):
         """Prints str representation of an instance"""
