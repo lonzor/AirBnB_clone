@@ -20,6 +20,7 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
+    count = 0
 
     def __init__(self, *args, **kwargs):
         """
@@ -33,5 +34,7 @@ class Place(BaseModel):
                     kwargs[i] = datetime.strptime(kwargs[i],
                                                   "%Y-%m-%dT%H:%M:%S.%f")
                 setattr(self, i, kwargs[i])
+            Place.count += 1
         else:
             super().__init__()
+            Place.count += 1
