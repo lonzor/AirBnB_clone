@@ -20,9 +20,9 @@ import models
 class HBNBCommand(cmd.Cmd):
     """This class contains the console for HBnB project"""
 
-    obj_dict = {"BaseModel": BaseModel(), "User": User(), "Place": Place(),
-                "State": State(), "City": City(), "Amenity": Amenity(),
-                "Review": Review()}
+    obj_dict = {"BaseModel": BaseModel, "User": User, "Place": Place,
+                "State": State, "City": City, "Amenity": Amenity,
+                "Review": Review}
     prompt = '(hbnb)'
 
     def do_all(self, arg):
@@ -117,7 +117,7 @@ class HBNBCommand(cmd.Cmd):
         elif arg not in self.obj_dict.keys():
             print("** class doesn't exist **")
         else:
-            obj = self.obj_dict[arg]
+            obj = self.obj_dict[arg]()
             obj.save()
             print(obj.id)
 
