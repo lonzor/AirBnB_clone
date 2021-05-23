@@ -11,6 +11,7 @@ class Review(BaseModel):
     place_id = ""
     user_id = ""
     text = ""
+    count = 0
 
     def __init__(self, *args, **kwargs):
         """
@@ -24,5 +25,7 @@ class Review(BaseModel):
                     kwargs[i] = datetime.strptime(kwargs[i],
                                                   "%Y-%m-%dT%H:%M:%S.%f")
                 setattr(self, i, kwargs[i])
+            Review.count += 1
         else:
             super().__init__()
+            Review.count += 1

@@ -12,6 +12,7 @@ class User(BaseModel):
     password = ""
     first_name = ""
     last_name = ""
+    count = 0
 
     def __init__(self, *args, **kwargs):
         """
@@ -25,5 +26,7 @@ class User(BaseModel):
                     kwargs[i] = datetime.strptime(kwargs[i],
                                                   "%Y-%m-%dT%H:%M:%S.%f")
                 setattr(self, i, kwargs[i])
+            User.count += 1
         else:
             super().__init__()
+            User.count += 1

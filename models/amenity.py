@@ -10,6 +10,7 @@ class Amenity(BaseModel):
     """Class holds amenity name"""
 
     name = ""
+    count = 0
 
     def __init__(self, *args, **kwargs):
         """
@@ -23,5 +24,7 @@ class Amenity(BaseModel):
                     kwargs[i] = datetime.strptime(kwargs[i],
                                                   "%Y-%m-%dT%H:%M:%S.%f")
                 setattr(self, i, kwargs[i])
+            Amenity.count += 1
         else:
             super().__init__()
+            Amenity.count += 1

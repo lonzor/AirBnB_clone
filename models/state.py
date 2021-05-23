@@ -9,6 +9,7 @@ class State(BaseModel):
     """Hold data pertaining to State"""
 
     name = ""
+    count = 0
 
     def __init__(self, *args, **kwargs):
         """
@@ -22,5 +23,7 @@ class State(BaseModel):
                     kwargs[i] = datetime.strptime(kwargs[i],
                                                   "%Y-%m-%dT%H:%M:%S.%f")
                 setattr(self, i, kwargs[i])
+            State.count += 1
         else:
             super().__init__()
+            State.count += 1

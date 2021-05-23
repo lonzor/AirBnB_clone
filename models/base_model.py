@@ -6,12 +6,12 @@ from datetime import datetime
 import uuid
 import models
 
-
 class BaseModel:
     """
     Class that is the base of other models
     """
 
+    count = 0
     def __init__(self, *args, **kwargs):
         """
         Constructor of class BaseModel instance
@@ -24,11 +24,13 @@ class BaseModel:
                     kwargs[i] = datetime.strptime(kwargs[i],
                                                   "%Y-%m-%dT%H:%M:%S.%f")
                 setattr(self, i, kwargs[i])
+            BaseModel.count += 1
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now(tz=None)
             self.updated_at = self.created_at
             models.storage.new(self)
+            BaseModel.count += 1
 
     def __str__(self):
         """

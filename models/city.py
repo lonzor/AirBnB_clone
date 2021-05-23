@@ -11,6 +11,7 @@ class City(BaseModel):
 
     state_id = ""
     name = ""
+    count = 0
 
     def __init__(self, *args, **kwargs):
         """
@@ -24,5 +25,7 @@ class City(BaseModel):
                     kwargs[i] = datetime.strptime(kwargs[i],
                                                   "%Y-%m-%dT%H:%M:%S.%f")
                 setattr(self, i, kwargs[i])
+            City.count += 1
         else:
             super().__init__()
+            City.count += 1
