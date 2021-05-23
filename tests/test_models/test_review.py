@@ -14,9 +14,9 @@ class test_review(unittest.TestCase):
         self.assertTrue(hasattr(r, "place_id"))
         self.assertIsInstance(r.place_id, str)
 
-    def test_usr_id(self):
-        self.assertTrue(hasattr(r, "usr_id"))
-        self.assertIsInstance(r.state_id, str)
+    def test_user_id(self):
+        self.assertTrue(hasattr(r, "user_id"))
+        self.assertIsInstance(r.user_id, str)
 
     def text(self):
         self.assertTrue(hasattr(r, "text"))
