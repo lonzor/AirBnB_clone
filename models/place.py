@@ -3,6 +3,8 @@
 
 
 from models.base_model import BaseModel
+from datetime import datetime
+
 
 class Place(BaseModel):
     """Has lots of data about the Airbnb listing"""
@@ -18,3 +20,18 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
+
+    def __init__(self, *args, **kwargs):
+        """
+        Constructor of class User instance
+        """
+        if kwargs is not None and len(kwargs) != 0:
+            for i in kwargs:
+                if i == "__class__":
+                    continue
+                if i == "created_at" or i == "updated_at":
+                    kwargs[i] = datetime.strptime(kwargs[i],
+                                                  "%Y-%m-%dT%H:%M:%S.%f")
+                setattr(self, i, kwargs[i])
+        else:
+            super().__init__()
