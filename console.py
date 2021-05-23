@@ -5,7 +5,6 @@ the Holberton School AirBnB project
 """
 from models.base_model import BaseModel
 from models.user import User
-from models.user import User
 from models.place import Place
 from models.state import State
 from models.city import City
@@ -175,6 +174,11 @@ class HBNBCommand(cmd.Cmd):
             cmnd = line_list[1]
             if cmnd == "all()":
                 self.do_all(obj)
+            if cmnd == "count()":
+                for k, v in self.obj_dict.items():
+                    if k == obj:
+                        print("{}".format(v.count))
+                        break
             
         except:
             print("***Unknown syntax: {}".format(line))
