@@ -23,6 +23,7 @@ class HBNBCommand(cmd.Cmd):
     obj_dict = {"BaseModel": BaseModel, "User": User, "Place": Place,
                 "State": State, "City": City, "Amenity": Amenity,
                 "Review": Review}
+
     prompt = '(hbnb)'
 
     def do_all(self, arg):
@@ -166,6 +167,17 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         pass
+
+    def default(self, line):
+        try:
+            line_list = line.split(".")
+            obj = line_list[0]
+            cmnd = line_list[1]
+            if cmnd == "all()":
+                self.do_all(obj)
+            
+        except:
+            print("***Unknown syntax: {}".format(line))
 
 if __name__ == '__main__':
         HBNBCommand().cmdloop()
