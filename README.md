@@ -47,7 +47,17 @@ Recreation of the AirBnb console. Takes input from user and stores data in JSON 
 	  * Deals with saving, reloading, and new objects.
 
 ### console.py
-This is sort of like a shell from a previous project. There is a prompt and it takes input from the keyboard.
+This is sort of like a shell from a previous project. There is a prompt and it takes input from the keyboard. Help functions were created to display help text if a command was used incorrectly.
+
+* do_all(self, arg) - Prints all str representations of all instances based on class name. If no class name, prints all instances of all objects
+* do_update(self, arg) - Update an instance based on class name and id
+* do_show(self, arg) - Prints str representation of an instance
+* do_create(self, arg) - Creates new BaseModel objects
+* do_destroy(self, arg) - Destroys an instance based on class name and id
+* do_quit(self, arg) - Executes the quit command to exit console.
+* do_EOF(self, line) - Executes EOF
+* emptyline(self) - deals with empty line given in console
+* default(self, line) - deals with the command class name.all()
 ## Compilation
 
 ```c
