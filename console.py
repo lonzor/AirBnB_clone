@@ -5,6 +5,12 @@ the Holberton School AirBnB project
 """
 from models.base_model import BaseModel
 from models.user import User
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 from models.engine.file_storage import FileStorage
 import cmd
 import sys
@@ -14,7 +20,9 @@ import models
 class HBNBCommand(cmd.Cmd):
     """This class contains the console for HBnB project"""
 
-    obj_dict = {"BaseModel": BaseModel(), "User": User()}
+    obj_dict = {"BaseModel": BaseModel(), "User": User(), "Place": Place(),
+                "State": State(), "City": City(), "Amenity": Amenity(),
+                "Review": Review()}
     prompt = '(hbnb)'
 
     def do_all(self, arg):
