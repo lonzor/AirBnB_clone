@@ -16,6 +16,7 @@
     width: 20%;
     margin-right: 30px;
     height: 48;
+    position: absolute;
 }
 
 .filters button:hover {
