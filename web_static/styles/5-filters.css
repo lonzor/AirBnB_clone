@@ -28,6 +28,7 @@
     width: 25%;
     position: relative;
     margin-left: 55px;
+    display: inline-block;
 }
 
 .filters h3 {
