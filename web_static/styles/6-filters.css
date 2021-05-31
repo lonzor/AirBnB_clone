@@ -28,24 +28,25 @@
     height: 100%;
     width: 25%;
     position: relative;
-    margin-left: 50px;
     display: inline-block;
 }
 
 .filters h3 {
     font-weight: 600;
     margin-bottom: 0;
+    margin-left: 50px;
 }
 
 .filters h4 {
     font-weight: 400;
     font-size: 14px;
     margin: 0;
+    margin-left: 50px;
 }
 
 .popover {
     visibility: hidden;
-    width: 85%;
+    width: 84%;
     left: 0;
     margin-top: 15px;
     padding-bottom: 20px;
@@ -60,7 +61,7 @@
 }
 
 .popover ul, .popover li {
-    line-height: 145%;
+    line-height: 150%;
     list-style-type: none;
 }
 
