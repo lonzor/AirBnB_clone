@@ -14,9 +14,10 @@
     width: 20%;
     height: 48px;
     border-radius: 4px;
+    border: 0px;
     top: 11px;
     right: 30px;
-    position:absolute
+    position: absolute;
 }
 
 .filters button:hover {
@@ -27,18 +28,18 @@
     height: 100%;
     width: 25%;
     position: relative;
-    margin-left: 55px;
+    margin-left: 50px;
     display: inline-block;
 }
 
 .filters h3 {
-    font-weight: 650;
+    font-weight: 600;
     margin-bottom: 0;
 }
 
 .filters h4 {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
 }
 
