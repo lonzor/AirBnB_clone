@@ -28,12 +28,12 @@
     height: 100%;
     width: 25%;
     position: relative;
-    display: inline-block;
+    display: inline-grid;
 }
 
 .filters h3 {
     font-weight: 600;
-    margin-bottom: 0;
+    margin-bottom: 3px;
     margin-left: 50px;
 }
 
@@ -56,8 +56,8 @@
 }
 
 .amenities .popover {
-    padding-top: 20px;
     margin-left: -5px;
+    padding-top: 20px;
 }
 
 .popover ul, .popover li {
@@ -69,8 +69,8 @@
     border-right: 1px solid #DDDDDD;
 }
 
-.locations ul h2{
-    font-size: 15px;
+.locations ul h2 {
+    font-size: 16px;
     margin-bottom: 3px;
 }
 
